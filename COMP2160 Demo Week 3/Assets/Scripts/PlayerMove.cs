@@ -17,10 +17,7 @@ public class PlayerMove : MonoBehaviour
         float dx = Input.GetAxis(InputAxes.Horizontal);        
         float dy = Input.GetAxis(InputAxes.Vertical);
 
-        Vector2 move = Vector2.up * dy * speed * Time.deltaTime;
+        Vector2 move = new Vector2(dx, dy) * speed * Time.deltaTime;
         transform.Translate(move, Space.Self);
-
-        float rotate = -turnSpeed * dx * Time.deltaTime;
-        transform.Rotate(Vector3.forward * rotate); // rotate around the z axis
     }
 }

@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 102087213}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06637a50228c4157a2afb8a25fc87e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   turnSpeed: 60
 --- !u!1 &399468421
 GameObject:
@@ -711,6 +711,7 @@ MonoBehaviour:
   nextCheckpoint: 0
   speed: 5
   checkpointRadius: 0.1
+  player: {fileID: 102087211}
 --- !u!1 &1746401608
 GameObject:
   m_ObjectHideFlags: 0
