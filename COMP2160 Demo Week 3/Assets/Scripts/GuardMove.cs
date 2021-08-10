@@ -30,8 +30,8 @@ public class GuardMove : MonoBehaviour
 
     void Start()
     {
-        nextCheckpoint = NearestCheckpoint();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        StartPatrol();
     }
 
     void Update()
