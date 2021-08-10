@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class GuardMove : MonoBehaviour
 {
     public Transform player;
@@ -9,16 +10,85 @@ public class GuardMove : MonoBehaviour
     public float speed = 5; // m/s
     public float checkpointRadius = 0.1f; // m
 
+    public Color patrolColor = Color.blue;
+    public Color chaseColor = Color.red;
+    public Color confusedColor = Color.yellow;
+    private SpriteRenderer spriteRenderer;
+
+    public float confusedDuration = 2; // seconds
+    private float confusedTimer;
+
     private int nextCheckpoint = 0;
+
+    private enum State 
+    {
+        Patrol,
+        Chase,
+        Confused
+    }
+    private State state = State.Patrol;
 
     void Start()
     {
         nextCheckpoint = NearestCheckpoint();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        Patrol();
+        switch (state)
+        {
+            case State.Patrol:
+                Patrol();
+                if (CanSeePlayer())
+                {
+                    StartChase();
+                }
+                break;
+
+            case State.Chase:
+                Chase();
+                if (!CanSeePlayer())
+                {
+                    StartConfused();
+                }
+                break;
+
+            case State.Confused:
+                // stand still
+                confusedTimer -= Time.deltaTime;
+
+                if (CanSeePlayer())
+                {
+                    StartChase();
+                }
+                else if (confusedTimer <= 0)
+                {
+                    StartPatrol();
+                }
+                break;
+        }
+
+    }
+
+    private void StartPatrol()
+    {
+        state = State.Patrol;
+        spriteRenderer.color = patrolColor;
+        nextCheckpoint = NearestCheckpoint();
+    }
+
+    private void StartChase()
+    {
+        state = State.Chase;
+        spriteRenderer.color = chaseColor;
+    }
+
+    private void StartConfused()
+    {
+        state = State.Confused;
+        confusedTimer = confusedDuration;
+        spriteRenderer.color = confusedColor;
     }
 
     /**

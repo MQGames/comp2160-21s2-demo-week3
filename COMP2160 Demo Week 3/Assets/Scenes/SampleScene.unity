@@ -269,6 +269,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   turnSpeed: 60
+--- !u!1 &151940042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 151940043}
+  m_Layer: 0
+  m_Name: Checkpoint 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &151940043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151940042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.58, y: 3.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1268148997}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399468421
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +634,7 @@ Transform:
   - {fileID: 1746401609}
   - {fileID: 2086988648}
   - {fileID: 2107541885}
+  - {fileID: 151940043}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -665,7 +696,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 568b609c2bbea422ebfc8017b2a7d409, type: 3}
   m_Color: {r: 0.05724907, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -684,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385438594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.563, y: 5.24, z: 0}
+  m_LocalPosition: {x: 6.5, y: -4.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1136593759}
@@ -703,15 +734,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790c71cafcda54bcbbad440e5e0d5f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 102087211}
   patrol:
   - {fileID: 616816199}
   - {fileID: 1746401609}
   - {fileID: 2086988648}
   - {fileID: 2107541885}
-  nextCheckpoint: 0
+  - {fileID: 151940043}
   speed: 5
   checkpointRadius: 0.1
-  player: {fileID: 102087211}
 --- !u!1 &1746401608
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107541884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.02, y: 1.14, z: 0}
+  m_LocalPosition: {x: 6.23, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1268148997}
